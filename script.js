@@ -1,14 +1,15 @@
 //task 1
-async function iterateWithAsyncAwait (array) {
-    for (const value of array) {
-        console.log(value)
-        await new Promise(resolve=> setTimeout(resolve, 1000));
+let ele =0;
+async function iterateWithAsyncAwait(){
+    if(ele<tab.length){
+        setTimeout(() => {
+            console.log(tab[ele]);
+            ele++;
+            iterateWithAsyncAwait()
+        }, 1000);
     }
 }
-
-// Exple
-const values = [1,2,3,4,5];
-iterateWithAsyncAwait(values)
+iterateWithAsyncAwait([1,2,3,4,5,6,7,8,9]);
 //Task2
 async function awaitCall() {
     // Simulate API call
